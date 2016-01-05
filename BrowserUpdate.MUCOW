@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HTMLWidget name="Browser-Update for Muse" formatNumber="3" localization="none" creator="Nathan at Kōm Creative" defaultWidth="40" defaultHeight="40" isResizable="false">
+
+    <parameters>
+    	<info label="Place anywhere on page to notify users of outdated web browsers. Thanks to www.browser-update.org."/>
+
+    	<color name="buBorderColour" label="Border Colour" defaultValue="#A29330"/>
+
+    	<color name="buBGColour" label="Background Colour" defaultValue="#FDF2AB"/>
+
+    	<color name="buFontColour" label="Font Colour" defaultValue="#ffffff"/>
+
+    	<text label="Custom message text:"name="customText" defaultValue="Your browser is out of date. It has known security flaws and may not display all features of this and other websites. Click to learn how to update your browser."/>
+
+    	<url name="url" label="URL: (Default: browser-update.org)" defaultValue="http://kōm.com/1PH7hzP"/>
+
+		<number name="buBorderWeight" min="1" max="25" step="1" snap="1" defaultValue="1" label="Border weight:"/>
+
+    	<number name="reminder" min="0" max="200" step="12" snap="1" defaultValue="24" label="Hours until re-notification:"/>
+
+    	<number name="reminderClosed" min="0" max="200" step="12" snap="1" defaultValue="72" label="Hours until re-notification on close:"/>
+
+    	 <bool name="newwindow" label="Open URL in new window?" defaultValue="true">
+    		<trueVal value="true"/>
+    		<falseVal value="false"/>
+		</bool>
+
+    	 <bool name="test" label="Enable test mode?" defaultValue="false">
+    		<trueVal value="true"/>
+    		<falseVal value="false"/>
+		</bool>
+
+	</parameters>
+
+	<pageItemPosterHTML>
+		<![CDATA[
+		<style>
+			.poster {
+				color: #ffffff;
+				font-family: sans-serif;
+				font-size: 16pt;
+				font-weight: bold;
+				background-color: #FFE448;
+				text-align: center;
+				width: 40px;
+				height: 40px;
+			}
+			.posterText {
+			line-height: 40px;
+			}
+		</style>
+		<div class="poster">
+			<p class="posterText">BU</p>
+		</div>
+		]]>
+	</pageItemPosterHTML>
+
+	<pageItemHTML>
+        <![CDATA[
+            <div><!--Nothing to see here--></div>
+        ]]>
+    </pageItemHTML>
+
+    <bodyEndHTML>
+		<![CDATA[
+			<style>
+				body .buorg {
+				    border-bottom:{param_buBorderWeight}px solid #{param_buBorderColour};
+				    background:#{param_buBGColour} no-repeat 1em 0.55em url(http://browser-update.org/img/dialog-warning.gif);\
+				    color: {param_buFontColour}
+				}
+			</style>
+
+			<!--Start of BrowserUpdate.org Script-->
+				<script> 
+					var $buoop = {
+						c:2,
+						text: "{param_customText}",
+						reminder: {param_reminder},
+						reminderClosed: {param_reminderClosed},
+						newwindow: {param_newwindow},
+						url: "{param_url}",
+						test: {param_test}
+					}; 
+					function $buo_f(){ 
+ 						var e = document.createElement("script"); 
+ 						e.src = "//browser-update.org/update.min.js"; 
+ 						document.body.appendChild(e);
+					};
+					try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
+					catch(e){window.attachEvent("onload", $buo_f)}
+				</script> 
+	
+			<!--End of BrowserUpdate.org Script-->
+		]]>
+	</bodyEndHTML>
+
+</HTMLWidget>
