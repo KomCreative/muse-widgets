@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HTMLWidget name="Custom Filter 1.0" formatNumber="4" localization="none" creator="Nathan at Kōm Creative" defaultWidth="40" defaultHeight="40" isResizable="false">
+    
+    <parameters>
+
+    	<info label="Create a graphic style for each effect, and enter the style name. Place a gradient over the image for a complete instagram style effect."/>
+        
+        <text name="CS1" label="Custom Filter 1 Graphic Style:" defaultValue="custom1"/>
+        <section label="Custom Filter 1 Otions">
+            <number name="contrast" min="0" max="200" step="1" 
+            snap="1" defaultValue="100" label="Contrast"/>
+
+            <number name="brightness" min="0" max="200" step="1" 
+            snap="1" defaultValue="100" label="Brightness"/>
+
+            <number name="saturate" min="0" max="200" step="1" 
+            snap="1" defaultValue="100" label="Saturation"/>
+
+            <number name="sepia" min="0" max="100" step="1" 
+            snap="1" defaultValue="0" label="Sepia"/>
+
+            <number name="grayscale" min="0" max="100" step="1" 
+            snap="1" defaultValue="0" label="Grayscale"/>
+
+            <number name="invert" min="0" max="100" step="1" 
+            snap="1" defaultValue="0" label="Color Inversion"/>
+
+            <number name="rotate" min="0" max="360" step="1" 
+            snap="1" defaultValue="0" label="Hue Rotation"/>
+
+            <number name="blur" min="0" max="100" step="1" 
+            snap="1" defaultValue="0" label="Blur"/>
+        </section>
+        
+        <text name="CS2" label="Custom Filter 2 Graphic Style:" defaultValue="custom2"/>
+        <section label="Custom Filter 2 Otions">
+            <number name="contrast2" min="0" max="200" step="1" 
+            snap="1" defaultValue="100" label="Contrast"/>
+
+            <number name="brightness2" min="0" max="200" step="1" 
+            snap="1" defaultValue="100" label="Brightness"/>
+
+            <number name="saturate2" min="0" max="200" step="1" 
+            snap="1" defaultValue="100" label="Saturation"/>
+
+            <number name="sepia2" min="0" max="100" step="1" 
+            snap="1" defaultValue="0" label="Sepia"/>
+
+            <number name="grayscale2" min="0" max="100" step="1" 
+            snap="1" defaultValue="0" label="Grayscale"/>
+
+            <number name="invert2" min="0" max="100" step="1" 
+            snap="1" defaultValue="0" label="Color Inversion"/>
+
+            <number name="rotate2" min="0" max="360" step="1" 
+            snap="1" defaultValue="0" label="Hue Rotation"/>
+
+            <number name="blur2" min="0" max="100" step="1" 
+            snap="1" defaultValue="0" label="Blur"/>
+        </section>
+        
+        <text name="CS3" label="Custom Filter 3 Graphic Style:" defaultValue="custom3"/>
+        <section label="Custom Filter 3 Otions">
+            <number name="contrast3" min="0" max="200" step="1" 
+            snap="1" defaultValue="100" label="Contrast"/>
+
+            <number name="brightness3" min="0" max="200" step="1" 
+            snap="1" defaultValue="100" label="Brightness"/>
+
+            <number name="saturate3" min="0" max="200" step="1" 
+            snap="1" defaultValue="100" label="Saturation"/>
+
+            <number name="sepia3" min="0" max="100" step="1" 
+            snap="1" defaultValue="0" label="Sepia"/>
+
+            <number name="grayscale3" min="0" max="100" step="1" 
+            snap="1" defaultValue="0" label="Grayscale"/>
+
+            <number name="invert3" min="0" max="100" step="1" 
+            snap="1" defaultValue="0" label="Color Inversion"/>
+
+            <number name="rotate3" min="0" max="360" step="1" 
+            snap="1" defaultValue="0" label="Hue Rotation"/>
+
+            <number name="blur3" min="0" max="100" step="1" 
+            snap="1" defaultValue="0" label="Blur"/>
+        </section>
+	</parameters>
+	
+	<pageItemPosterHTML>
+	<![CDATA[
+		<style>
+		.poster {
+			color: #ffffff;
+			font-family: sans-serif;
+			font-size: 16pt;
+			font-weight: bold;
+			background-color: #7FFFD4;
+			text-align: center;
+			width: 40px;
+			height: 40px;
+		}
+		.posterText {
+		line-height: 40px;
+		}
+		</style>
+		<div class="poster">
+			<p class="posterText">CF</p>
+		</div>
+	]]>
+	</pageItemPosterHTML>
+    
+    <headHTML>
+        <![CDATA[
+
+            <style>
+                .{param_CS1} {
+                  position: relative;
+                  -webkit-filter: contrast({param_contrast}%) brightness({param_brightness}%) saturate({param_saturate}%) sepia({param_sepia}%) grayscale({param_grayscale}%) invert({param_invert}%) hue-rotate({param_rotate}deg) blur({param_blur}px);
+
+                  filter: contrast({param_contrast}%) brightness({param_brightness}%) saturate({param_saturate}%) sepia({param_sepia}%) grayscale({param_grayscale}%) invert({param_invert}%) hue-rotate({param_rotate}deg) blur({param_blur}px);
+                }
+                .{param_CS2} {
+                  position: relative;
+                  -webkit-filter: contrast({param_contrast2}%) brightness({param_brightness2}%) saturate({param_saturate2}%) sepia({param_sepia2}%) grayscale({param_grayscale2}%) invert({param_invert2}%) hue-rotate({param_rotate2}deg) blur({param_blur2}px);
+
+                  filter: contrast({param_contrast2}%) brightness({param_brightness2}%) saturate({param_saturate2}%) sepia({param_sepia2}%) grayscale({param_grayscale2}%) invert({param_invert2}%) hue-rotate({param_rotate2}deg) blur({param_blur2}px);
+                }
+                .{param_CS3} {
+                  position: relative;
+                  -webkit-filter: contrast({param_contrast3}%) brightness({param_brightness3}%) saturate({param_saturate3}%) sepia({param_sepia3}%) grayscale({param_grayscale3}%) invert({param_invert3}%) hue-rotate({param_rotate3}deg) blur({param_blur3}px);
+
+                  filter: contrast({param_contrast3}%) brightness({param_brightness3}%) saturate({param_saturate3}%) sepia({param_sepia3}%) grayscale({param_grayscale3}%) invert({param_invert3}%) hue-rotate({param_rotate3}deg) blur({param_blur3}px);
+                }
+            </style>
+
+        ]]>
+    </headHTML>
+	<pageItemHTML>
+        <![CDATA[
+            <!-- (ノಠ益ಠ)ノ彡┻━┻ -->
+        ]]>
+    </pageItemHTML>
+</HTMLWidget>
